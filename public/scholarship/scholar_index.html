@@ -13,37 +13,40 @@
     <header>
         <div class="container">
             <nav class="navigation">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Scholarship Result</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Scholarship</a></li>
+                <li class="nav-item"><a class="nav-link" href="../hostel/home_hostel/hostel.html">Hostels</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Chat</a></li>
+                <li class="nav-item"><a class="nav-link" href="../misc/joinus.html">Join With Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="../misc/about.html">About</a></li>
             </nav> 
         </div>
     </header>
     <section class="nav-section">
         <div class="showdown">
-            <label for="search">Scholarships for Indian Students</label>
+            <h1 style="margin-left:5%;margin-bottom:1%;font-size:1.8rem;">Scholarship for Indian Students</h1>
         </div>
-        <div class="slist">
+        <!-- <div class="slist">
             <li><a href="#">Recent</a></li>
             <li><a href="#">Live</a></li>
             <li><a href="#">Up Coming</a></li>
-        </div>
+        </div> -->
     </section> 
     <section class="main-sec">
           
     </section>
 
     <script>
+        
 async function fetchScholarshipData() {
     try {
         const response = await fetch('/api/scholarship'); // Replace with your actual API endpoint
         const scholarships = await response.json();
 
+        // Get reference to the main section where scholarship items will be appended
         const mainSection = document.querySelector('.main-sec');
 
+        // Assuming scholarships is an array of scholarship objects
         scholarships.forEach(scholarship => {
             if (scholarship.isLive) {
                 const endDate = new Date(scholarship.endDate);
@@ -54,7 +57,7 @@ async function fetchScholarshipData() {
                 scholarshipDiv.className = 's-lable';
 
                 scholarshipDiv.innerHTML = `
-                    <a href="#" onclick="storeScholarshipId('${scholarship._id}')">
+                    <a href="#">
                         <div class="scholar-temp">
                             <div class="upper">
                                 <div class="u-img">
@@ -83,6 +86,7 @@ async function fetchScholarshipData() {
                     </a>  
                 `;
 
+                // Append the new scholarshipDiv to the main section
                 mainSection.appendChild(scholarshipDiv);
             }
         });
@@ -91,15 +95,10 @@ async function fetchScholarshipData() {
     }
 }
 
-function storeScholarshipId(id) {
-    localStorage.setItem('selectedScholarshipId', id);
-    // Optionally, redirect to another page after storing
-    window.location.href = 'back.html'; // Change this to your desired URL
-}
-
+// Call the function to execute
 fetchScholarshipData();
-</script>
 
+    </script>
 </body>
 </html>
  
