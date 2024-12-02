@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BE4 Subjects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --background-color: #f0f0f0; /* Light background */
+            --text-color: #333; /* Dark text */
+            --primary-color: #6200ea; /* Primary color */
+            --card-background: #ffffff; /* Card background for light theme */
+            --hover-background: #e0e0e0; /* Hover effect for light theme */
+            --border-color: #6200ea; /* Border color */
+            --font-size: 16px; /* Base font size */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme changes */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color); /* Primary color for headings */
+            font-size: calc(var(--font-size) * 2); /* Larger heading size */
+        }
+
+        h2 {
+            color: var(--text-color); /* Dark color for section headings */
+            border-bottom: 2px solid var(--primary-color); /* Underline effect */
+            padding-bottom: 5px;
+            font-size: calc(var(--font-size) * 1.5); /* Increased size for section headings */
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding-left: 0; /* Remove padding */
+            width: 100%; /* Set width of ul to full width */
+        }
+
+        .subject {
+            display: block; /* Make the subject a block element */
+            padding: 15px 20px; /* Padding around the subject */
+            border: 2px solid var(--border-color); /* Border around subjects */
+            border-radius: 5px; /* Rounded corners */
+            text-decoration: none; /* Remove underline from links */
+            color: var(--primary-color); /* Link color */
+            transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+            width: calc(100% - 20px); /* Full width minus padding for equal height */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            font-size: calc(var(--font-size) * 1.2); /* Base font size for subjects */
+        }
+
+        .subject:hover {
+            background-color: var(--hover-background); /* Change background on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .theme-toggle {
+          cursor: pointer;
+          font-size: 30px; /* Larger font size for toggle button */
+          margin-left: auto; /* Align to the right in header */
+          background-color: transparent;
+          border: none;
+          color: var(--primary-color);
+          transition: color 0.3s ease;
+          padding: 10px; /* Add padding for larger clickable area */
+        }
+        
+        .theme-toggle:hover {
+          color: #ff5722; /* Change color on hover for toggle button */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333333;
+            color: white;
+        }
+
+        body.light-theme {
+            --background-color: #ffffff; /* Light background for light theme */
+            --text-color: #000000; /* Dark text for light theme */
+        }
+
+        body.dark-theme {
+            --background-color: #121212; /* Dark background for dark theme */
+            --text-color: #e0e0e0; /* Light text for dark theme */
+        }
+        
+        section {
+          display:flex;
+          flex-direction : column ; 
+          align-items : center ; 
+          margin-bottom : 20px ; 
+          width : 100%; 
+          max-width : 800px ; 
+          margin-left : auto ; 
+          margin-right : auto ; 
+          padding : 15px ; 
+          background : rgba(255,255,255,0.9); /* Slightly transparent white background for sections*/
+          border-radius : 10px ; 
+          box-shadow : 0 4px 8px rgba(0,0,0,0.2) ; 
+        }
+
+        @media (max-width: 600px) {
+          .subject {
+              font-size: calc(var(--font-size) * 1); /* Smaller font size on mobile devices */
+              padding: 10px; /* Adjust padding for smaller screens */
+              width : calc(100% - 10px) ; 
+          }
+          
+          h1 {
+              font-size: calc(var(--font-size) * 1.5); /* Smaller heading size on mobile devices */
+          }
+          
+          h2 {
+              font-size: calc(var(--font-size) * 1.25); /* Smaller section heading size on mobile devices */
+          }
+      }
+
+      body.dark-theme h1,
+      body.dark-theme h2 {
+          color: #e0e0e0; /* Light heading colors in dark theme to ensure visibility */
+      }
+      
+      body.dark-theme .subject {
+           color:#bb86fc; /* Lighter link color in dark theme to ensure visibility */ 
+      }
+
+      .new-color{
+        color:white;
+      }
+      
+      .color-change { 
+          color: var(--primary-color);
+      }
+      
+      body.dark-theme .color-change { 
+          color:#bb86fc;   /* Change to a lighter shade in dark theme */ 
+      }
+      
+      .ul-custom-width { 
+          width: 80%;   /* Specify a custom width for ul elements */ 
+      }
+      
+      .back-link{
+        color:white;
+      }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="color-change new-color">BE4 Subjects</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <i id="theme-icon" class="fas fa-toggle-on" aria-hidden="true"></i> <!-- Icon for theme toggle -->
+    </button>
+</header>
+
+<section>
+    <h2 class="color-change">7th Semester</h2>
+    <ul class="ul-custom-width">
+        <li><a class="subject" href="https://youtube.com/playlist?list=PLxCzCOWd7aiHGhOHV-nwb0HR5US5GFKFI&si=lhOA1E7MnYE7YTmd" target="_blank"><i class="fas fa-robot"></i> Artificial Intelligence</a></li>
+        <li><a class="subject" href="https://youtube.com/playlist?list=PLGjplNEQ1it8-0CmoljS5yeV-GlKSUEt0&si=fTM8APxCDKihRkjg" target="_blank"><i class="fab fa-python"></i> Python</a></li>
+        <li><a class="subject" href="https://youtube.com/playlist?list=PLV8vIYTIdSnb4H0JvSTt3PyCNFGGlO78u&si=8ktaLM89STb42Odo" target="_blank"><i class="fas fa-database"></i> Data Warehousing</a></li>
+        <li><a class="subject" href="https://www.youtube.com/playlist?list=PL4" target="_blank"><i class="fas fa-chart-line"></i> MAI</a></li>
+        <li><a class="subject" href="https://www.youtube.com/playlist?list=PL5" target="_blank"><i class="fas fa-pencil-alt"></i> Engineering Drawing</a></li>
+    </ul>
+</section>
+<section>
+    <h2 class="color-change">8th sem</h2>
+</section>
+<footer>
+    <p><a href="staticEdu.html" class="back-link"><i class="fas fa-arrow-left"></i>Home</a></p>
+    <p>&copy; 2024 College Study Resources</p>
+</footer>
+
+<script>
+// Check if a theme is set in local storage
+if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-theme');
+} else if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+}
+
+// Function to toggle theme
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+    // Toggle between light and dark themes
+    if (body.classList.contains('light-theme')) {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        icon.classList.remove('fa-toggle-on');
+        icon.classList.add('fa-toggle-off'); // Change icon to off
+        localStorage.setItem('theme', 'dark'); // Save preference in local storage
+    } else {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        icon.classList.remove('fa-toggle-off');
+        icon.classList.add('fa-toggle-on'); // Change icon to on
+        localStorage.setItem('theme', 'light'); // Save preference in local storage
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how to fill</title>
+    <link rel="stylesheet" href="./bak.css">
+</head>
+<body>
+    <div class="highlight"><strong>Eligibility</strong></div>
+    <div class="ScholarshipDetails_studyLine__ka4X2"><p><strong>To be eligible, an applicant must:-</strong></p>
+
+        <ul>
+            <li>be enrolled in one&nbsp;of the following disciplines/courses:&nbsp;
+            <ul>
+                
+                <li>B.E./B.Tech</li>
+    
+            </ul>
+            </li>
+            <li>be a domicile of one of the following states:
+            <ul>
+                <li>Gujarat</li>
+                <li>Madhya pradesh</li>
+                <li>Karnataka</li>
+                <li>Kerala</li>
+                <li>Maharashtra</li>
+                <li>Punjab</li>
+                <li>Tamil Nadu</li>
+            </ul>
+            </li>
+            <li>have secured admission under merit in government/government-aided/government-recognised self-financing/autonomous colleges&nbsp;during the academic year of 2024-25</li>
+            <li>have&nbsp;a family annual income of less than&nbsp;₹3,00,000</li>
+        </ul>
+        
+        <p><strong>Note:-</strong></p>
+        
+        <ul>
+            <li>Students who are dependent wards of the martyred armed forces personnel, and students who are speech/vision/hearing impaired&nbsp;who are admitted under the courses mentioned above are also eligible for this scholarship.</li>
+            <li>The income criteria do not apply to the wards of the martyred armed forces personnel.</li>
+        </ul></div>
+
+
+        <div class="highlight"><strong>Benefits</strong></div>
+        <div class="ScholarshipDetails_studyLine__ka4X2"><p><strong>Selected candidates will receive:-</strong></p>
+            
+            <p>All of the reimbursements remain within the overall eligibility of <span class="an"> ₹1,00,000&nbsp;</span>per annum.</p></div>
+            
+        <div class="highlight"><strong>Documents</strong></div>
+        <div class="ScholarshipDetails_studyLine__ka4X2"><ul>
+            <li>Passport-sized photograph&nbsp;of the student</li>
+            <li>Admission letter/memo</li>
+            <li>Course fee structure</li>
+            <li>Income certificate issued by government authorities</li>
+            <li>Nativity/domicile certificate</li>
+            <li>Marksheets of qualifying examination</li>
+            <li>ID proof &amp; address proof of student and parent</li>
+            <li>Medical certificate (for physically challenged/impaired students)</li>
+            <li>Instructions from the university for converting the CGPA/Grade into percentage (mandatory for MBA applicants)</li>
+            <li>For dependant wards of Martyred Armed Forces Personnel who lost their life while serving the Nation, evidence showing the same needs to be submitted.</li>
+        </ul>
+            
+        <p><strong>Note:-</strong></p>
+        
+        <ul>
+            <li>For speech/hearing/vision impaired students, a certificate issued by a Medical Officer, not below the rank of DMO or an approved Medical Officer of the Bank is mandatory.</li>
+            <li>The photograph must be in JPEG file format and less than 500 KB in size.</li>
+            <li>All other documents must be in PDF file format and less than 300 KB in size.</li>
+        </ul></div>
+        
+        
+        
+        
+        <div class="highlight"><strong>How can you apply?</strong></div>
+            <div class="ScholarshipDetails_studyLine__ka4X2"><p><strong>Eligible students can apply for the scholarship through the following steps:-<br>
+                Step 1: </strong>Click on the<strong> 'Apply Now'&nbsp;</strong>button&nbsp;below.&nbsp;<br>
+                <strong>Step 2:</strong> Click on the<strong> 'Register' </strong>button and fill in the required registration details. (<strong>Note:</strong> If already registered, log in using Gmail/Mobile number/Email ID).<br>
+                <strong>Step 3:</strong> Read all the details carefully, navigate to the '<strong>How to Apply</strong>' section, and click on the given link.<br>
+                <strong>Step 4: </strong>Enter mobile number, captcha and click on the login button.<br>
+                <strong>Step 5: </strong>After successful verification, read the terms &amp; conditions carefully, tick the checkbox at the bottom of the page, and click on the '<strong>Submit</strong>' button.<br>
+                <strong>Step 6:</strong> Fill in all the required details, upload the necessary documents, and submit the application.</p>
+                
+                <p><strong>Note:-</strong>&nbsp;Applicants are requested to take a printout of the submitted application for future reference.</p></div>
+                
+                
+                
+                <div class="highlight"><strong>Important Dates</strong></div>
+                <div class="ScholarshipDetails_studyLine__ka4X2"><p><strong>Application Deadline:&nbsp;</strong><span class="dt">18th December 2024</span></p></div>
+                
+                
+                
+                <div class="highlight"><strong>Terms and Conditions</strong></div>
+                <article class="ScholarshipDetails_studyLine__ka4X2"><ul>
+                    <li>One seat in each discipline will be kept aside for physically challenged students.</li>
+                    <li>If no applications are received under the physically challenged category, they will be utilised under the general category.</li>
+                    <li>Applications will be accepted through online mode only.</li>
+                    <li>Incomplete/multiple applications will not be accepted.</li>
+                    <li>The decision of the Bank/ Foundation regarding the selection of students and in all matters in this regard will be final and binding.</li>
+                </ul>
+                
+                <p><strong>Note:- </strong>For detailed information, kindly refer to the<strong> 'Scholarship Guidelines'</strong>.</p></article>
+
+                <div class="btn"></div>
+
+<script>
+    async function fetchScholarshipData() {
+        const storedId = localStorage.getItem('selectedScholarshipId');
+        if (!storedId) {
+            console.error('No scholarship ID found in local storage.');
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/scholarship/${storedId}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const scholarshipDataArray = await response.json();
+            console.log('Fetched Scholarship Data:', scholarshipDataArray); // Log the entire data for debugging
+            
+            // Access the first element of the array
+            if (Array.isArray(scholarshipDataArray) && scholarshipDataArray.length > 0) {
+                const scholarshipData = scholarshipDataArray[0]; // Get the first object
+
+                // Set values to the corresponding elements
+                if (scholarshipData.reward !== undefined) {
+                    document.querySelector('.an').textContent = `₹${scholarshipData.reward}`;
+                } else {
+                    console.error('Reward is undefined in fetched data');
+                }
+
+                if (scholarshipData.endDate !== undefined) {
+                    const endDate = new Date(scholarshipData.endDate);
+                    document.querySelector('.dt').textContent = endDate.toLocaleDateString();
+                } else {
+                    console.error('End date is undefined in fetched data');
+                }
+
+                // Create an anchor tag for officialLink
+                const officialLinkContainer = document.querySelector('.btn'); // Ensure this element exists in your HTML
+                officialLinkContainer.innerHTML = `<a href="${scholarshipData.officialLink}" class="linked" target="_blank">Apply Now</a>`;
+                
+            } else {
+                console.error('No scholarship data found in array');
+            }
+
+        } catch (error) {
+            console.error('Error fetching scholarship data:', error);
+        }
+    }
+
+    // Call the function to execute
+    fetchScholarshipData();
+</script>
+
+
+</body>
+</html>

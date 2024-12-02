@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Study Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --primary-color: #bb86fc;
+            --card-background: #1e1e1e;
+            --hover-background: #333333;
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .theme-toggle {
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 20px; /* Increased font size for better visibility */
+            position: absolute; /* Positioning the button */
+            top: 15px; 
+            right: 15px; 
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        section {
+            width: 90%; /* Set width to a percentage for responsiveness */
+            max-width: 800px; /* Maximum width for larger screens */
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            padding: 20px; /* Increased padding for better spacing */
+            text-align: center; /* Centering text */
+            cursor: pointer; /* Pointer cursor to indicate clickable */
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        section:hover {
+            background-color: var(--hover-background);
+        }
+
+        h2 {
+            color: var(--text-color);
+            font-family: 'Georgia', serif; /* Different font for headings */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333333;
+            color: white;
+        }
+
+        /* Light Theme Styles */
+        body.light-theme {
+            --background-color: #ffffff; /* Light background */
+            --text-color: #000000; /* Dark text */
+            --primary-color: #6200ea; /* Primary color */
+            --card-background: #f5f5f5; /* Card background */
+            --hover-background: #e0e0e0; /* Hover effect */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+          section {
+              width: 95%; /* Adjust width for smaller screens */
+              padding: 15px; /* Adjust padding for smaller screens */
+          }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>College Study Resources</h1>
+        <button class="theme-toggle" onclick="toggleTheme()">
+          <i class="fas fa-adjust"></i> <!-- Icon for theme toggle -->
+        </button>
+    </header>
+
+    <main>
+        <section onclick="window.location.href='be1.html'">
+            <h2>BE-1</h2>
+        </section>
+
+        <section onclick="window.location.href='be2.html'">
+            <h2>BE-2</h2>
+        </section>
+
+        <section onclick="window.location.href='be3.html'">
+            <h2>BE-3</h2>
+        </section>
+
+        <section onclick="window.location.href='be4.html'">
+            <h2>BE-4</h2>
+        </section>
+        <section onclick="window.location.href='https://drive.google.com/drive/folders/1TQXmMKPO8uQoxxfVDmM0RmiSw10gnEvP'">
+            <h2>Google Drive Study Material</h2>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 College Study Resources</p>
+    </footer>
+
+<script>
+  // Function to apply the saved theme from local storage
+  function applySavedTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const body = document.body;
+      const themeToggleButton = document.querySelector('.theme-toggle i');
+
+      if (savedTheme === 'light') {
+          body.classList.add('light-theme');
+          themeToggleButton.classList.remove('fa-adjust');
+          themeToggleButton.classList.add('fa-sun');
+      } else {
+          themeToggleButton.classList.remove('fa-sun');
+          themeToggleButton.classList.add('fa-adjust');
+      }
+  }
+
+  function toggleTheme() {
+      const body = document.body;
+      const themeToggleButton = document.querySelector('.theme-toggle i');
+
+      // Toggle light theme class
+      body.classList.toggle('light-theme');
+
+      // Update button icon based on current theme
+      if (body.classList.contains('light-theme')) {
+          themeToggleButton.classList.remove('fa-adjust');
+          themeToggleButton.classList.add('fa-sun');
+          localStorage.setItem('theme', 'light'); // Save light theme
+      } else {
+          themeToggleButton.classList.remove('fa-sun');
+          themeToggleButton.classList.add('fa-adjust');
+          localStorage.setItem('theme', 'dark'); // Save dark theme
+      }
+  }
+
+  // Apply saved theme on page load
+  window.onload = applySavedTheme;
+</script>
+
+</body>
+</html>

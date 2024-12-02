@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e1e2f; /* Darker background */
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        .title {
+            margin: 2rem 0;
+            padding: 1rem; /* Added padding */
+            font-size: 3rem; /* Increased size */
+            text-align: center;
+            background: linear-gradient(90deg, #4e54c8, #8f94fb); /* Gradient background */
+            -webkit-background-clip: text; /* Clip text with gradient */
+            -webkit-text-fill-color: transparent; /* Text fill color transparent */
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        }
+
+        .content-box {
+            width: 90%;
+            max-width: 800px; /* Max width for larger screens */
+            margin: 2rem auto; /* Centering the box */
+            padding: 2rem; /* Padding inside the box */
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        }
+
+        .body {
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem; /* Added gap for better spacing */
+        }
+
+        .info {
+            width: calc(25% - 2rem); /* Increased width for better visibility on mobile devices */
+            max-width: 300px; /* Max width for larger screens */
+            margin: 1rem;
+            padding: 1.5rem; /* Adjusted padding */
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent card */
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the left */
+            justify-content: center; /* Center content vertically */
+            transition: transform 0.3s, box-shadow 0.3s; /* Adding transition for effects */
+        }
+
+        .info:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5); /* Shadow effect on hover */
+        }
+
+        .info p {
+            font-size: 1.4rem; /* Adjusted font size for better readability */
+            text-align: left; /* Align text to the left */
+            margin-bottom: 1rem; /* Add bottom margin for spacing between paragraphs */
+        }
+
+        .info a {
+            font-size: 1.2rem; /* Slightly larger link font size */
+            color: #4e54c8; /* Link color */
+        }
+
+        .info a:hover {
+            color: #8f94fb; /* Change link color on hover */
+        }
+
+        .icon {
+            margin-right: 0.5rem; /* Space between icon and text */
+        }
+
+        .fa-github {
+          color: black; /* Black color for GitHub icon */
+        }
+
+        .fa-envelope {
+          color: #d14836; /* Colorful Gmail icon */
+        }
+
+        .fa-code {
+          color: #4caf50; /* Green color for frontend icon */
+        }
+
+        .fa-database {
+          color: #2196F3; /* Blue color for backend icon */
+        }
+
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          margin-top: 20px;
+          background-color: #4e54c8; 
+          color: white;
+          border-radius: 5px;
+          text-decoration: none;
+          font-size: large;
+          transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+          background-color: #8f94fb; 
+        }
+
+        a {
+          text-decoration: none;
+          color: #4e54c8; 
+        }
+
+        a:hover {
+          text-decoration: underline; 
+        }
+
+        @media (max-width: 768px) { 
+          .info {
+              width: calc(50% - 2rem); 
+              max-width:none; 
+              margin-bottom :1rem ; 
+              padding-left :1rem ; 
+              padding-right :1rem ; 
+              padding-top :2rem ; 
+              padding-bottom :2rem ; 
+          }
+          
+          .title {
+              font-size :2.5rem ; 
+          }
+          
+          body{
+              padding :10px ; 
+          }
+          
+          a{
+              font-size :1.2rem ; 
+          }
+          
+          .info p{
+              font-size :1.3rem ; 
+          }
+          
+          .info a{
+              font-size :1.2rem ; 
+          }
+          
+          .body{
+              padding :10px ; 
+          }
+          
+          h1{
+              margin-top :10px ; 
+          }
+      }  
+
+      @media (max-width: 480px) { 
+          .info {
+              width: calc(100% - 2rem); 
+              margin-bottom :1rem ; 
+              padding-left :1rem ; 
+              padding-right :1rem ; 
+              padding-top :2rem ; 
+              padding-bottom :2rem ; 
+              border-radius : .5rem ; 
+          }
+          
+          .title {
+              font-size :2rem ; 
+          }
+          
+          body{
+              padding :10px ; 
+          }
+          
+          a{
+              font-size :1.2rem ; 
+          }
+          
+          .info p{
+              font-size :1.3rem ; 
+          }
+          
+          .info a{
+              font-size :1.2rem ; 
+          }
+          
+          .body{
+              padding :10px ; 
+          }
+          
+          h1{
+              margin-top :10px ; 
+          }  
+      }  
+    </style>
+</head>
+<body>
+    <h1 class="title">About S.H.E.D</h1>
+
+    <!-- Content about S.H.E.D in a styled box -->
+    <div class="content-box">
+       <p style="font-size: 1.4rem; text-align:left;">
+           S.H.E.D (Scholarship Hostel Educational Doctorz) is an initiative aimed at college students who are eligible for scholarships and hostel accommodations but are unaware of their existence. Our mission is to provide financial aid opportunities and resources that enable students to enhance their educational experience and improve their quality of life while studying.
+       </p>
+    </div>
+
+    <!-- Section for S.H.E.D Members -->
+    <h2 class="title">S.H.E.D Members</h2>
+    <div class="body">
+       <div class="info">
+           <p><i class="fas fa-user"></i> Vasara Chirag</p>
+           <p><i class="fab fa-github icon"></i> Github - <a href="#">Link</a></p>
+           <p><i class="fas fa-envelope icon"></i> Gmail - <a href="#">Link</a></p>
+           <p><i class="fa fa-code icon"></i> Frontend Developer</p>
+       </div>
+       <div class="info">
+           <p><i class="fas fa-user"></i> Baraiya Mihir</p>
+           <p><i class="fab fa-github icon"></i> Github - <a href="#">Link</a></p>
+           <p><i class="fas fa-envelope icon"></i> Gmail - <a href="#">Link</a></p>
+           <p><i class="fa fa-code icon"></i> Frontend Developer</p>
+       </div>
+       <div class="info">
+           <p><i class="fas fa-user"></i> Patel Darsh</p>
+           <p><i class="fab fa-github icon"></i> Github - <a href="#">Link</a></p>
+           <p><i class="fas fa-envelope icon"></i> Gmail - <a href="#">Link</a></p>
+           <p><i class="fa fa-database icon"></i> Backend Developer</p>
+       </div>
+       <div class="info">
+           <p><i class="fas fa-user"></i> Rasania Mihir</p>
+           <p><i class="fab fa-github icon"></i> Github - <a href="#">Link</a></p>
+           <p><i class="fas fa-envelope icon"></i> Gmail - <a href="#">Link</a></p>
+           <p><i class="fa fa-database icon"></i> Backend Developer</p>
+       </div>
+    </div>
+
+    <!-- Button styled link to home -->
+    <a href="../index.html" class="button">Back to Home</a>
+
+    <!-- Include Font Awesome script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMqCq9ZxZ6B7XlI7B+zjWkR9zJzF6GgQWmJ7g" crossorigin="anonymous"></script>
+
+</body>
+</html>

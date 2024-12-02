@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Admission Eligibility Criteria</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1.5s ease-in-out;
+}
+
+/* Main Content */
+.main-content , .criteria-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    min-height: 60vh;
+}
+
+.criteria-section {
+    max-width: 800px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    animation: slideIn 2s ease-out;
+}
+
+.criteria-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.criteria-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.criteria-list li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    animation: bounceIn 2s;
+}
+
+.criteria-list li span {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #ffd700;
+}
+
+/* Apply Note */
+.apply-note {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffeb3b;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .criteria-section {
+        padding: 20px;
+    }
+
+    .criteria-list li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .criteria-list li {
+        font-size: 0.9rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Hostel Admission Eligibility Criteria</h1>
+    </header>
+    <main class="main-content">
+        <section class="criteria-section">
+            <p>To be eligible for hostel admission, you must meet the following requirements:</p>
+            <ul class="criteria-list">
+        
+                <li> Distance: Residence must be more than 40 km away from the institution.</li>
+                <!-- <li> Annual Family Income: Must not exceed ₹300,000.</li> -->
+                <!-- <li>All the students residents of Gujarat state</li> -->
+                <li> Students of all casts are eligible</li>
+                <li>students must have enrolled in any programm in  MS University</li>
+            </ul>
+            <p class="apply-note">If you meet these criteria, you are welcome to apply for hostel admission!</p>
+        </section>
+    </main>
+    
+    <main class="criteria-box">
+        <section class="criteria-section">
+            <h2>Steps for Admission</h2>
+        <ul class="criteria-list">
+            <li>Complete the online registration form available on our website.</li>
+            <li>Attach the necessary documents, including ID proof and admission letter.</li>
+            <Li>Go to your respactive facuilty to approve your form  </Li>
+            <li>Wait for the review and verification process by warden.</li>
+            <li>Finalize your admission by paying the required fees and signing the agreement.</li>
+            <Li>students will be allotted the hostels by the Chief Warden Office</Li>
+            <li> allotment of the room in a hostel will be done by the Warden</li>
+        </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Hostel Admissions. All rights reserved.</p>
+    </footer>
+</body>
+</html>

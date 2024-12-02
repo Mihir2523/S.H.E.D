@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Home - S.H.E.D</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: #111;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      .navbar {
+        background-color: #222;
+        padding: 15px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-menu {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .navbar li {
+        margin: 0 10px;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      .navbar a:hover {
+        color: blueviolet;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 3px 0;
+        transition: 0.4s;
+      }
+
+      .hamburger.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      .intro {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #111;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 999;
+        opacity: 1;
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+        width: 100%;
+      }
+
+      .sliding-text {
+        font-size: 80px;
+        text-align: center;
+        animation: slide 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding-bottom: 20%;
+      }
+
+      .container h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 35px;
+        margin-bottom: 25px;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .card {
+        background-color: #222;
+        padding: 20px 15px;
+        text-align: center;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .card.reveal {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .card:hover {
+        background-color: blueviolet;
+        transform: scale(1.05);
+      }
+
+      .icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+        color: blueviolet;
+      }
+
+      .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 20vh;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1200px) {
+        .services {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .services {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .sliding-text {
+          font-size: 60px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar-menu ul {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #222;
+          padding: 20px 0;
+        }
+
+        .navbar-menu ul.active {
+          display: flex;
+        }
+
+        .navbar li {
+          margin: 10px 0;
+          text-align: center;
+          width: 100%;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .services {
+          grid-template-columns: 1fr;
+        }
+
+        .sliding-text {
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          width: 95%;
+        }
+
+        .sliding-text {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="./scholarship/scholar_index.html">Scholarship</a></li>
+          <li><a href="./hostel/home_hostel/hostel.html">Hostels</a></li>
+          <li><a href="./education/staticEdu.html">Educational</a></li>
+          <li><a href="./misc/joinus.html">Join with Us</a></li>
+          <li><a href="./misc/about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <div class="intro">
+      <div class="center">
+        <h1 class="sliding-text">S.H.E.D</h1>
+      </div>
+    </div>
+
+    <div class="container" id="services">
+      <h2>Our Services</h2>
+      <section class="services">
+        <div class="card card-1"  onclick="window.location.href='./hostel/home_hostel/hostel.html'" >
+
+          <div class="icon"><i class="fa fa-home"></i></div>
+          <div class="title">Hostel</div>
+          <p>Comfortable and affordable accommodation for all students.</p>
+        </div>
+        <div class="card card-2" onclick="window.location.href='./scholarship/scholar_index.html'">
+          <div class="icon"><i class="fa fa-graduation-cap"></i></div>
+          <div class="title">Scholarship</div>
+          <p>Financial assistance to help you achieve your academic goals.</p>
+        </div>
+        <div class="card card-3" onclick="window.location.href='./hostel/home_hostel/hostel.html'">
+          <div class="icon"><i class="fa fa-comments"></i></div>
+          <div class="title">Chat</div>
+          <p>Connect with peers and mentors through our chat platform.</p>
+        </div>
+        <div class="card card-4" onclick="window.location.href='./misc/joinus.html'">
+          <div class="icon"><i class="fa fa-user-plus"></i></div>
+          <div class="title">Join with Us</div>
+          <p>Become a part of our community and make a difference.</p>
+        </div>
+        <div class="card card-5" onclick="window.location.href='./education/staticEdu.html'">
+          <div class="icon"><i class="fa fa-book"></i></div>
+          <div class="title">Education Resources</div>
+          <p>Comprehensive study materials for all semesters and subjects.</p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 S.H.E.D. All Rights Reserved.</p>
+        <p>Empowering Students | Building Futures</p>
+      </div>
+    </footer>
+
+    <script>
+      function revealOnScroll() {
+        const cards = document.querySelectorAll(".card");
+        const windowHeight = window.innerHeight;
+
+        cards.forEach((card, index) => {
+          const cardTop = card.getBoundingClientRect().top;
+
+          if (cardTop < windowHeight * 0.75) {
+            setTimeout(() => {
+              card.classList.add("reveal");
+            }, index * 200);
+          }
+        });
+      }
+
+      function toggleMenu() {
+        const navbarUl = document.querySelector('.navbar-menu ul');
+        const hamburger = document.querySelector('.hamburger');
+        navbarUl.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    </script>
+  </body>
+</html>
